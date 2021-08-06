@@ -21,7 +21,7 @@
   padding: 10px;
 }
 
-#left > i,
+#left > i, #left >
 p {
   padding: 10px;
 }
@@ -43,7 +43,7 @@ p {
   padding: 10px;
 }
 
-#right > div,
+#right > div, #right >
 p {
   padding: 10px;
 }
@@ -75,42 +75,43 @@ ul {
 
 li {
   padding-right: 35px;
+  cursor: pointer;
 }
 
-.banner > img {
-  width: 100%;
-  height: auto;
-  /* padding:20em;
+.banner{
   background-image: url("./images/home-banner-bg.png");
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 14%;
 }
 
-
-.category-news,.recent-projects{
-  margin-top:100px;
+.banner > p{
+  text-align: left;
+  font-size: 5vw;
+  word-spacing: 100vw;
+  padding:0;
+  color:#fff;
 }
 
-.category-news > h1,
-p {
+.category-news > h1,.completed-projects > h1{
   text-align: center;
 }
 
-.recent-projects > h1,
-p {
+.category-news > p,.completed-projects > p{
   text-align: center;
 }
 
-.news-cards {
-  margin-top:100px;
-  display: grid;
-  margin-left:10%;
-  margin-right: 40px;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 30px;
+.news-cards,.product-cards{
+  padding:5%;
+  display: flex;
+  gap:20px;
 }
 
-#card {
+.product-cards{
+  padding-top: 1.5%;
+}
+
+#news-card,#product-card {
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -119,34 +120,85 @@ p {
   
 }
 
-.news-cards #card{
-  border: 1px solid #ccc;
-}
-
-#card > img{
-  width: 100%;
+#news-card > img,#product-card > img{
+  width: calc(80% + 40px);
   height: auto;
   object-fit: contain;
 }
 
-#card > h2{
-  margin-top:10px;
+#news-card-content{
+border: 1px solid #ccc;
 }
 
-#card-content {
-  padding-top: 20px;
-  padding-bottom: 20px;
+#news-card-content,#product-card-content{
+  width: 80%;
+  border-top: 0;
+  padding:20px;
+}
+
+#news-card-content p{
+  text-align: left;
+  max-width: 50ch;
+  padding:10px;
+}
+
+#product-card-content p{
   text-align: center;
-  font-size: 18px;
-} 
-
-
-#row-one,#row-two {
-  margin-top: 100px;
-  display: grid;
-  margin-left:10%;
-  margin-right: 10%;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 30px;
+  max-width: 50ch;
+  padding:5px;
 }
 
+.completed-projects > ul {
+  margin-top: 5%;
+  padding:0 20%;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-section{
+  background-image: url("./images/home-banner-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5%; 
+  display: flex;
+  justify-content: space-between;
+}
+
+#review-card{
+  padding:40px;
+  display: flex;
+  justify-content: space-between;
+  background-color:#fff;
+}
+
+#rounded-pic > img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#review-content{
+  margin-left: 3rem;
+}
+
+#review-content > p,h3{
+  padding:0;
+  padding-bottom: 10px;
+  text-align: left;
+  max-width: 50ch;
+}
+
+@media screen and (max-width: 400px) {
+  .news-cards,.product-cards{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-news > p,.completed-projects > p{
+    font-size: 1vw;
+  }
+  
+  
+}
